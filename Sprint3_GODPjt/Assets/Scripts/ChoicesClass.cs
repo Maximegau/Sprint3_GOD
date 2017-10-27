@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ChoicesClass : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	//have the actual text
+
+	//children
+
+	//whether remains next time or not
+
+	//conditions that change faith modifier
+
+	//faith given
+
 }
