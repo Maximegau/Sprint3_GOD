@@ -26,12 +26,11 @@ public class ChoicesClass : MonoBehaviour {
 	}
 
 	public void addChild(ChoicesClass child){
-		if (children == null){
-			children = new List<ChoicesClass>();
+		if (children == null) {
+			children = new List<ChoicesClass> ();
 			children.Add (child);
-		}
-		else
-			children.Add(child)
+		} else
+			children.Add (child);
 				
 	}
 
@@ -44,7 +43,31 @@ public class ChoicesClass : MonoBehaviour {
 	}
 
 	public int getFaith(){
+		return faithGiven;
+	}
 
+	public bool matchDecision(string matchTo){
+		return matchTo.Equals (decision);
+	}
+
+	public void fillConstraint(ChoicesClass cur){
+		//foreach (string con in conditionals){
+		//	if (cur.matchDecision (con)) {
+				//remove it. if con now empty, then multiply the faith by -1
+		//	}				
+		//}
+		if (conditionals.Contains (cur.decision)) {
+			conditionals.Remove (cur.decision);
+			if (conditionals.Count == 0)
+				faithGiven = faithGiven * -1;
+		}
+	}
+
+	public List<ChoicesClass> chosen(){
+		StaticVariables.faith += faithGiven;
+		persistant = false;
+		//remove self from reveal list maybe?
+		return children;
 	}
 
 }
