@@ -9,9 +9,10 @@ public class ChoicesClass : MonoBehaviour {
 
 	//children
 	private List<ChoicesClass> children = null;
+	private string[] childrenHolder;
 
 	//whether remains next time or not
-	public bool persistant = true;
+	//public bool persistant = true;
 
 	//conditions that change faith modifier
 	private List<string> conditionals = null;
@@ -19,10 +20,11 @@ public class ChoicesClass : MonoBehaviour {
 	//faith given
 	public int faithGiven;
 
-	public ChoicesClass(string dec, bool persist, int fate){
+	public ChoicesClass(string dec, int fate, string[] childrenAr){
 		decision = dec;
-		persistant = persist;
+		//persistant = persist;
 		faithGiven = fate;
+		childrenHolder = childrenAr;
 	}
 
 	public void addChild(ChoicesClass child){
@@ -38,9 +40,9 @@ public class ChoicesClass : MonoBehaviour {
 		return children;
 	}
 
-	public bool stays(){
+	/*public bool stays(){
 		return persistant;
-	}
+	}*/
 
 	public int getFaith(){
 		return faithGiven;
@@ -65,7 +67,7 @@ public class ChoicesClass : MonoBehaviour {
 
 	public List<ChoicesClass> chosen(){
 		StaticVariables.faith += faithGiven;
-		persistant = false;
+		//persistant = false;
 		//remove self from reveal list maybe?
 		return children;
 	}
