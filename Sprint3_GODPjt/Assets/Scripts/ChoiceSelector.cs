@@ -32,6 +32,8 @@ public class ChoiceSelector : MonoBehaviour {
 			pointer = 0;
 		Object temp = peopleArray [pointer];
 		Texture2D tex = temp as Texture2D;
+		//can call another thing with temp or
+		//you have a public varible that it loads into(better)
 	}
 
 
