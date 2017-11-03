@@ -11,7 +11,7 @@ public class ChoicesClass : MonoBehaviour {
 	private List<ChoicesClass> children = null;
 
 	//whether remains next time or not
-	public bool persistant;
+	public bool persistant = true;
 
 	//conditions that change faith modifier
 	private List<string> conditionals = null;

@@ -1,0 +1,17 @@
+3
+
+("Neutral", ["Neutral2"], 0, None)
+
+("Positive", ["Positive2"], 20, None)
+
+("Negative", ["Negative2", "Negative3", "Positive3"], -10, None)
+
+("Neutral2", [], 0, None)
+
+("Positive2", ["Positive3"], 20, None)
+
+("Negative2", [], -10, None)
+
+("Negative3, [], -10, None)
+
+("Positive3", [], 20, None)
