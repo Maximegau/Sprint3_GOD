@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ChoiceSelector : MonoBehaviour {
 	private Object[] peopleArray;
 	private int pointer;
+	public GameObject orb;
 
 	// Use this for initialization
 	void Start () {
@@ -25,16 +26,29 @@ public class ChoiceSelector : MonoBehaviour {
 		//the update always looking for a raycast and when it finds one, taking that
 	}
 
-	public void loadNextImage(){
-		pointer++;
+	private void endGame(bool won){
+		if (won) {
+			//will display the you win screen over civilization overlay
+		} else {
+			// Will display black screen with you are forgotten
+		}
+	}
+
+	public void loadNextImage(bool forward){
 		int length = peopleArray.Length;
-		if (pointer >= length)
-			pointer = 0;
+		if (forward) {
+			pointer++;
+			if (pointer >= length)
+				endGame(true);
+		} else {
+			pointer--;
+			if (pointer < 0)
+				endGame (false);
+		}
 		Object temp = peopleArray [pointer];
 		Texture2D tex = temp as Texture2D;
 		//can call another thing with temp or
 		//you have a public varible that it loads into(better)
 	}
-
 
 }
