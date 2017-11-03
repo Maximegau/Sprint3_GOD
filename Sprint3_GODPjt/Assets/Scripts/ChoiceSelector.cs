@@ -15,6 +15,9 @@ public class ChoiceSelector : MonoBehaviour {
 		pointer = 0; //might want to assign it to max or have it load index
 		//of 0 in the first place for consistancy. The peopleArray could be
 		//a bunch of textures and each texture is the world.
+		Object temp = peopleArray [pointer];
+		Texture2D tex = temp as Texture2D;
+		orb.GetComponent<Renderer>().material.mainTexture = tex;
 	}
 	
 	// Update is called once per frame

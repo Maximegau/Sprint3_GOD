@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: 'Assets/_Scenes/Cave #1.unity'
+    guid: db22e32f82832428384453ea818ad3c9
+  - enabled: 1
+    path: Assets/_Scenes/YouLose.unity
+    guid: 2f6ae7fc4b89442c69425c75b730aaac
+  - enabled: 1
+    path: Assets/_Scenes/YouWin.unity
+    guid: bc54d041f24ae4feb88a1cd13190a8f7
