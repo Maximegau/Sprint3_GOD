@@ -34,19 +34,27 @@ public class ChoiceSelector : MonoBehaviour {
 		}
 	}
 
-	public void loadNextImage(bool forward){
+	public void loadNextImage(int forward){
 		int length = peopleArray.Length;
-		if (forward) {
+		if (forward > 0) {
 			pointer++;
-			if (pointer >= length)
-				endGame(true);
-		} else {
+			if (pointer >= length) {
+				endGame (true);
+				return;
+			}
+		} else if (forward < 0) {
 			pointer--;
-			if (pointer < 0)
+			if (pointer < 0) {
 				endGame (false);
+				return;
+			}
+		} else {
+			//This will be where if you chose neutral you may end up doing it as
+			//pos or neg with certain probability
 		}
 		Object temp = peopleArray [pointer];
 		Texture2D tex = temp as Texture2D;
+		orb.GetComponent<Renderer>().material.mainTexture = tex;
 		//can call another thing with temp or
 		//you have a public varible that it loads into(better)
 	}
