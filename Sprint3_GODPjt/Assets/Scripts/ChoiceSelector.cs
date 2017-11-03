@@ -22,10 +22,10 @@ public class ChoiceSelector : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown (0))
-			loadNextImage (2);
-		if (Input.GetMouseButtonDown (1))
-			loadNextImage (-2);
+//		if (Input.GetMouseButtonDown (0))
+//			loadNextImage (2);
+//		if (Input.GetMouseButtonDown (1))
+//			loadNextImage (-2);
 
 		if (Input.GetKeyDown (KeyCode.Mouse0)) {
 			rayCasting ();
@@ -78,7 +78,7 @@ public class ChoiceSelector : MonoBehaviour {
 
 	void rayCasting (){
 		RaycastHit hit;
-		Ray ray = new Ray (transform.position, Vector3.forward);
+		Ray ray = new Ray (Input.mousePosition, Vector3.forward);
 		if (Physics.Raycast(ray, out hit)){
 			if (hit.collider.tag == "choice"){
 				int faith = hit.transform.gameObject.GetComponent<ChoicesClass>().getFaith();
