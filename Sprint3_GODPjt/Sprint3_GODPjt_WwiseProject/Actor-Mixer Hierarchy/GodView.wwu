@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{499B8821-0F8A-45C7-BE40-40C9391CED51}" SchemaVersion="80" RootDocumentID="{05BFCC1E-34B5-45A9-B3B1-6B4DF9641AF7}">
 	<AudioObjects>
-		<WorkUnit Name="GodView" ID="{499B8821-0F8A-45C7-BE40-40C9391CED51}" OwnerID="{05BFCC1E-34B5-45A9-B3B1-6B4DF9641AF7}" PersistMode="Nested"/>
+		<WorkUnit Name="GodView" ID="{499B8821-0F8A-45C7-BE40-40C9391CED51}" OwnerID="{05BFCC1E-34B5-45A9-B3B1-6B4DF9641AF7}" PersistMode="Nested">
+			<ChildrenList>
+				<Sound Name="Stinger_Win" ID="{AF58EF1A-C6C9-4E99-ABAB-580B0A6C1BC2}" ShortID="1066892038">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{589AE52B-605C-4DEE-8A8A-77F881F75966}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BF22D8A8-D0DC-4EB0-A82D-0D4289987F16}"/>
+						</Reference>
+					</ReferenceList>
+				</Sound>
+				<Sound Name="Stinger_Loose" ID="{7CEB3A9E-8805-4EFC-896D-BE9CC355676E}" ShortID="970440278">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{589AE52B-605C-4DEE-8A8A-77F881F75966}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{BF22D8A8-D0DC-4EB0-A82D-0D4289987F16}"/>
+						</Reference>
+					</ReferenceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
