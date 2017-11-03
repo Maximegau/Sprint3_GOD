@@ -26,6 +26,10 @@ public class ChoiceSelector : MonoBehaviour {
 			loadNextImage (2);
 		if (Input.GetMouseButtonDown (1))
 			loadNextImage (-2);
+
+		if (Input.GetKeyDown (KeyCode.Mouse0)) {
+			rayCasting ();
+		}
 	}
 
 	public void decisionEffects(){
@@ -70,4 +74,17 @@ public class ChoiceSelector : MonoBehaviour {
 		//you have a public varible that it loads into(better)
 	}
 
+
+
+	void rayCasting (){
+		RaycastHit hit;
+		Ray ray = new Ray (transform.position, Vector3.forward);
+		if (Physics.Raycast(ray, out hit)){
+			if (hit.collider.tag == "choice"){
+				hit.transform.gameObject.GetComponent<ChoicesClass>().getFaith();
+				loadNextImage ();
+			}
+		}
+	}
 }
+	
