@@ -17,7 +17,7 @@ public class ChoicesClass : MonoBehaviour {
 	private List<string> conditionals = null;
 
 	//faith given
-	private int faithGiven;
+	public int faithGiven;
 
 	public ChoicesClass(string dec, bool persist, int fate){
 		decision = dec;
