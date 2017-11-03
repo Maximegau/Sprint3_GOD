@@ -81,8 +81,8 @@ public class ChoiceSelector : MonoBehaviour {
 		Ray ray = new Ray (transform.position, Vector3.forward);
 		if (Physics.Raycast(ray, out hit)){
 			if (hit.collider.tag == "choice"){
-				hit.transform.gameObject.GetComponent<ChoicesClass>().getFaith();
-				loadNextImage ();
+				int faith = hit.transform.gameObject.GetComponent<ChoicesClass>().getFaith();
+				loadNextImage (faith);
 			}
 		}
 	}
