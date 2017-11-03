@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ChoiceSelector : MonoBehaviour {
 	private Object[] peopleArray;
@@ -18,7 +19,10 @@ public class ChoiceSelector : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetMouseButtonDown (0))
+			loadNextImage (2);
+		if (Input.GetMouseButtonDown (1))
+			loadNextImage (-2);
 	}
 
 	public void decisionEffects(){
@@ -29,14 +33,17 @@ public class ChoiceSelector : MonoBehaviour {
 	private void endGame(bool won){
 		if (won) {
 			//will display the you win screen over civilization overlay
+			SceneManager.LoadScene("YouWin");
 		} else {
 			// Will display black screen with you are forgotten
+			SceneManager.LoadScene("YouLose");
 		}
 	}
 
 	public void loadNextImage(int forward){
 		int length = peopleArray.Length;
 		if (forward > 0) {
+			Debug.Log ("Moving forward a frame");
 			pointer++;
 			if (pointer >= length) {
 				endGame (true);
@@ -44,6 +51,7 @@ public class ChoiceSelector : MonoBehaviour {
 			}
 		} else if (forward < 0) {
 			pointer--;
+			Debug.Log ("Moving backward a frame");
 			if (pointer < 0) {
 				endGame (false);
 				return;
