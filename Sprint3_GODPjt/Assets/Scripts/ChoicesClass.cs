@@ -8,7 +8,7 @@ public class ChoicesClass : MonoBehaviour {
 	public string decision;
 
 	//children
-	private List<ChoicesClass> children = null;
+	private List<string> children = null;
 	private string[] childrenHolder;
 
 	//whether remains next time or not
@@ -27,16 +27,16 @@ public class ChoicesClass : MonoBehaviour {
 		childrenHolder = childrenAr;
 	}
 
-	public void addChild(ChoicesClass child){
+	/*public void addChild(ChoicesClass child){
 		if (children == null) {
 			children = new List<ChoicesClass> ();
 			children.Add (child);
 		} else
 			children.Add (child);
 				
-	}
+	}*/
 
-	public List<ChoicesClass> getChildren(){
+	public List<string> getChildren(){
 		return children;
 	}
 
@@ -65,7 +65,7 @@ public class ChoicesClass : MonoBehaviour {
 		}
 	}
 
-	public List<ChoicesClass> chosen(){
+	public List<string> chosen(){
 		StaticVariables.faith += faithGiven;
 		//persistant = false;
 		//remove self from reveal list maybe?
