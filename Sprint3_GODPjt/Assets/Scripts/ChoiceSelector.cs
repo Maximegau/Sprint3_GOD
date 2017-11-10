@@ -8,6 +8,7 @@ public class ChoiceSelector : MonoBehaviour {
 	private Object[] peopleArray;
 	private int pointer;
 	public GameObject orb;
+	public Generator generator;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,8 @@ public class ChoiceSelector : MonoBehaviour {
 		Object temp = peopleArray [pointer];
 		Texture2D tex = temp as Texture2D;
 		orb.GetComponent<Renderer>().material.mainTexture = tex;
+		//finds generator object in order to regenerate the choices
+		GameObject.Find ("Generator").GetComponent<Generator>();
 	}
 	
 	// Update is called once per frame
@@ -82,7 +85,25 @@ public class ChoiceSelector : MonoBehaviour {
 		if (Physics.Raycast(ray, out hit)){
 			if (hit.collider.tag == "choice"){
 				int faith = hit.transform.gameObject.GetComponent<ChoicesClass>().getFaith();
+
+				//checks if choice is neutral
+				if (faith == 0)
+				{
+					
+					int choicePercentage;//this represent the chance of between 1 - 100
+					float choicePercentageF = Random.Range (0, 100);
+					choicePercentage = (int)choicePercentageF;
+					if (choicePercentage >= 30)
+					{
+						StaticVariables.faith += -15;
+					} else
+					{
+						StaticVariables.faith += 20;
+					}
+
+				}
 				loadNextImage (faith);
+				generator.generatorMethod ();
 			}
 		}
 	}

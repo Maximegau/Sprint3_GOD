@@ -6,6 +6,7 @@ public class StaticVariables : MonoBehaviour {
 
 	public static int faith = 30;
 	public static ChoicesClass lastChoice = null;
+	public static List<ChoicesClass> current = null;
 
 	public int changeFaith(int change){
 		faith += change;

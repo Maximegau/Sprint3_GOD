@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 65143806566121046}
   - component: {fileID: 23524179811286646}
   - component: {fileID: 114301226306460990}
+  - component: {fileID: 114344321804024010}
   m_Layer: 0
   m_Name: Choice
   m_TagString: Choice
@@ -193,7 +194,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decision: 
-  persistant: 1
+  faithGiven: 0
+--- !u!114 &114344321804024010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1452979975238694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c844b224e6b88468e9309ba11a86e56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114939963266621586
 MonoBehaviour:
   m_ObjectHideFlags: 1
